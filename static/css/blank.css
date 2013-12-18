@@ -25,8 +25,9 @@
 */
 
     body, form {
+      font-family: 'quicksandregular';
         margin: 0;
-        padding: 0;
+        padding: 0; 
     }
 
     a {
@@ -110,15 +111,15 @@
     }
 
     .alpha {
-        background-color: rgb(115,150,1);
+        background-color: #47B361;
     }
 
     .beta {
-        background-color: rgb(108, 111, 112);
+        background-color: #3ea5bb;
     }
 
     .gamma {
-        background-color: rgb(68, 105, 125);
+        background-color: #a47247;
     }
 
 

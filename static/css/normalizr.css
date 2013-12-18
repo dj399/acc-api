@@ -64,7 +64,7 @@ template {
  */
 
 html {
-    /* font-size: 100%;  Setting all browsers to 16px */
+    font-size: 100%;  
     font-family: sans-serif; /* 1 */
     -ms-text-size-adjust: 100%; /* 2 */
     -webkit-text-size-adjust: 100%; /* 2 */
@@ -75,7 +75,7 @@ html {
  */
 
 body {
-    /*  font-size: 0.756em; Setting 12px as base size */
+    font-size: 0.756em;
     margin: 0;
 }
 
