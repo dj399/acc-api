@@ -108,16 +108,26 @@ ACC.testConsole = function(){
 
             ACC.core.getAccount(data).done(function(response){
 
-                $dl = $('<dl>');
-
-                $dl.append('<dt>Parent Name</dt><dd>' + response.parent_name + '</dd>');
-                $dl.append('<dt>Child Name</dt><dd>' + response.child_name + '</dd>');
-                $dl.append('<dt>Current Date</dt><dd>' + moment.utc(response.current_date).format('DD-MM-YY') + '</dd>');
-                $dl.append('<dt>Loan Rate</dt><dd>' + response.loan_rate + '</dd>');
-                $dl.append('<dt>Saving Rate</dt><dd>' + response.saving_rate + '</dd>');
-                $dl.append('<dt>Pocket Money Amount</dt><dd>' + response.pocket_money_amount + '</dd>');
-                $dl.append('<dt>Pocket Money Day</dt><dd>' + response.pocket_money_day + '</dd>');
-                $dl.append('<dt>Balance</dt><dd>' + response.balance + '</dd>');
+                $dl = $('<form class="js-update-account">');
+                $dl.append('<h2>Account details:</h2>');
+                $dl.append('<input type="hidden" name = "id" value="'+response.id+'"/>');
+                $dl.append('<dl>');
+                $dl.append('<dt>Parent Name</dt><dd><div class="js-acc-description">' + response.parent_name + '</div>'+
+                    '<div class="js-acc-update"><input type="text" name="parent_name" value="' + response.parent_name + '" /></div></dd>');
+                $dl.append('<dt>Child Name</dt><dd><div class="js-acc-description">' + response.child_name + '</div>'+
+                    '<div class="js-acc-update"><input type="text" name="child_name" value="' + response.child_name + '" /></div></dd>');
+                $dl.append('<dt>Current Date</dt><dd><div class="js-acc-description">' + moment.utc(response.current_date).format('DD-MM-YY') + '</div>'+
+                    '<div class="js-acc-update"><input type="text" name="current_date" value="' + moment.utc(response.current_date).format('DD-MM-YY') + '" /></div></dd>');
+                $dl.append('<dt>Loan Rate</dt><dd><div class="js-acc-description">' + response.loan_rate + '</div>'+
+                    '<div class="js-acc-update"><input type="text" name="loan_rate" value="' + response.loan_rate + '" /></div></dd>');
+                $dl.append('<dt>Saving Rate</dt><dd><div class="js-acc-description">' + response.saving_rate + '</div>'+
+                    '<div class="js-acc-update"><input type="text" name="saving_rate" value="' + response.saving_rate + '" /></div></dd>');
+                $dl.append('<dt>Pocket Money Amount</dt><dd><div class="js-acc-description">' + response.pocket_money_amount + '</div>'+
+                    '<div class="js-acc-update"><input type="text" name="pocket_money_amount" value="' + response.pocket_money_amount + '" /></div></dd>');
+                $dl.append('<dt>Pocket Money Day</dt><dd><div class="js-acc-description">' + response.pocket_money_day + '</div>'+
+                    '<div class="js-acc-update"><input type="text" name="pocket_money_day" value="' + response.pocket_money_day + '" /></div></dd>');
+                $dl.append('<dt>Balance</dt><dd><div class="js-acc-description">' + response.balance + '</div>'+
+                    '<div class="js-acc-update"><input type="text" name="balance" value="' + response.balance + '" /></div></dd>');
 
                 if(typeof response.transactions === 'object'){
                     $dl.append('<dt>Transaction count</dt><dd>' + response.transactions.length + '</dd>');
@@ -130,6 +140,10 @@ ACC.testConsole = function(){
                     $dl.append('<dt>Goal type</dt><dd>' + response.goal.type + '</dd>');
                 }
 
+
+                $dl.append("<button id='showUpdateAccount' class='button1'>Edit account info</button>");
+                $dl.append("<button id='updateAccountInfo' class='button2'>Save changes</button>");
+                    
                 $('.js-info-wrapper').html($dl);
 
             });
@@ -263,6 +277,20 @@ ACC.testConsole = function(){
         init: init
     };
 }();
+
+$('.js-info-wrapper').on('click', '#showUpdateAccount', function() {
+
+    if ($(this).html() == 'Back') {
+        $(this).html('Edit account info');
+        $('#updateAccountInfo').hide();
+    } else {
+       $(this).html('Back');
+       $('#updateAccountInfo').show();
+    }
+    
+    $('.js-acc-description').toggle();
+    $('.js-acc-update').toggle();
+});
 
 $(document).ready(function(){
     ACC.testConsole.init();

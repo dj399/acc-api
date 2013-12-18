@@ -178,3 +178,15 @@
     .mod-a {
         background: #FF0000;
     }
+
+    .js-acc-update {
+      display: none;
+    }
+
+    #updateAccountInfo {
+     display: none; 
+     margin: 5px 10px;
+    }
+
+    
+
