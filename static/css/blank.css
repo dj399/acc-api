@@ -28,6 +28,7 @@
       font-family: 'quicksandregular';
         margin: 0;
         padding: 0; 
+        color:#fff;
     }
 
     a {
@@ -37,6 +38,29 @@
     a:hover {
         color: #03F;
     }
+    h1 {
+      padding: 0px 20px;
+      font-size: 300%;
+      color:#47B361;
+      background: url(../img/tree-logo.gif) no-repeat;
+    }
+    button {
+     background: #3ea5bb;
+     border:none;
+     color:#fff;
+     padding:10px;
+     display: block;
+     margin: 12px 0 0 0px;
+    }
+
+    label{
+      display: block;
+      margin: 10px 0;
+    }
+    input{
+      padding:5px;
+    }
+
 
 
 /*
@@ -68,6 +92,11 @@
 
     .module {
         padding: 10px 20px;
+        width:80%;
+        background:#47B361;
+        border-top-left-radius:20px;
+        border-bottom-right-radius:20px;
+        margin:10px; auto;
     }
 
         .module .title {

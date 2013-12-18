@@ -26,6 +26,7 @@ app.use('/test', express.static(__dirname + '/static'));
 app.use('/js', express.static(__dirname + '/static/js'));
 app.use('/css', express.static(__dirname + '/static/css'));
 app.use('/fonts', express.static(__dirname + '/static/fonts'));
+app.use('/img', express.static(__dirname + '/static/img'));
 
 
 //Home page
