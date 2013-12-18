@@ -28,7 +28,7 @@
       font-family: 'quicksandregular';
         margin: 0;
         padding: 0; 
-        color:#fff;
+        color:#3ea5bb;
         
     }
 
@@ -107,8 +107,8 @@
     .module {
         padding: 10px 20px;
         width:80%;
-        background:#47B361;
-        opacity: .7;
+        background:white;
+        opacity: .8;
         border-top-left-radius:20px;
         border-bottom-right-radius:20px;
         margin:10px; auto;
